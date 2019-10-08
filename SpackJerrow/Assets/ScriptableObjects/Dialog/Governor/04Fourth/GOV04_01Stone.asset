@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: GOV04_01Stone
+  m_EditorClassIdentifier: 
+  teaserText: 
+  playerText: 
+  playerClip: {fileID: 0}
+  npcText: Do you have the stone?
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: 5527f4c8390410c43beaa8f0d67dcc2b, type: 2}
+  rightChoice: {fileID: 11400000, guid: 21789a5ead47bba429ca6439831a4ee5, type: 2}
+  dialogProgressIncrement: 0
+  requieredItemsRemove: []
+  requieredItemsKeep: []
+  triggerMemberName: 

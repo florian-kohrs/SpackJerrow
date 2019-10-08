@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: Bubu01_03No
+  m_EditorClassIdentifier: 
+  teaserText: '*Help the Governor*'
+  playerText: "Do you really think I will join your side after you mutinied me ten
+    years ago? I\xB4ve been stuck on that shitty island since then! "
+  playerClip: {fileID: 0}
+  npcText: Don`t take that personally. You just didn`t plunder enough so the crew
+    grew impatient. I only took adventage of that.
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: d58aade92f267b2438cb244e85017235, type: 2}
+  rightChoice: {fileID: 0}
+  dialogProgressIncrement: 0
+  requieredItemsRemove: []
+  requieredItemsKeep: []
+  triggerMemberName: 

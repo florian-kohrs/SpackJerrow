@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116bcf2d9dfebd9428a69e879e6e81ed, type: 3}
+  m_Name: Pistol
+  m_EditorClassIdentifier: 
+  assetRef:
+    relativePathFromResource: asset/ScriptableObjects/Items/Equipable
+    assetName: Pistol
+    assetExtension: asset
+    wasAlreadyValidated: 1
+    runtimeRef: {fileID: 11400000}
+  itemClip: {fileID: 8300000, guid: b669733c5ffbfbc44921096db00f43c7, type: 3}
+  gameObject: {fileID: 4606854577551101521, guid: 10eb11ebba2695140b67c36764786409,
+    type: 3}
+  icon: {fileID: 21300000, guid: 1abe7858dda68244f82ae27a679dda4a, type: 3}
+  itemName: Peng!
+  itemDescription: pengpengpengpeng
+  value: 41
+  canBeSoled: 1
+  itemType: 1
+  equipLocalPosition: {x: 0.435, y: -0.01130605, z: 0.436}
+  equipLocalEulerAngle: {x: 0, y: -8.422, z: 0}
+  localScale: {x: 0.21225, y: 0.21225, z: 0.21225}

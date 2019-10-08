@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4f33be09c5823479c9a653ee821caa, type: 3}
+  m_Name: GuitarPowerChord
+  m_EditorClassIdentifier: 
+  animParts:
+  - position: {x: 0.748, y: 0.449, z: 0.152}
+    euler: {x: -3.947, y: 23.227, z: 142.188}
+    moveSpeed: 4
+  - position: {x: 0.988, y: 0.062, z: 0.341}
+    euler: {x: 13.515, y: 7.305, z: 101.761}
+    moveSpeed: 15
+  - position: {x: 0.427, y: -0.309, z: 1.355}
+    euler: {x: -10.662, y: -72.499, z: 78.01501}
+    moveSpeed: 15
+  - position: {x: -1.06, y: 0.065, z: 1.001}
+    euler: {x: -26.748, y: -145.979, z: 96.72201}
+    moveSpeed: 15

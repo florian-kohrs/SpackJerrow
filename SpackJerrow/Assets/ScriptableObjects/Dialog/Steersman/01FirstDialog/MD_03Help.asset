@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: MD_03Help
+  m_EditorClassIdentifier: 
+  teaserText: '*Help steersman*'
+  playerText: So, do you have any plan?
+  playerClip: {fileID: 0}
+  npcText: Yeah, but I need some stuff I don`t have. If you can bring it to me I can
+    rebuild the connection and return to him.
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: 6e72018915f13e049919eabb182222f3, type: 2}
+  rightChoice: {fileID: 0}
+  dialogProgressIncrement: 2
+  requieredItemsRemove: []
+  requieredItemsKeep:
+  - item:
+      relativePathFromResource: 
+      assetName: 
+      assetExtension: 
+      wasAlreadyValidated: 0
+      runtimeRef: {fileID: 11400000, guid: 630d2e57752ecce4a908b362ba28b344, type: 2}
+    itemCount: 1
+  triggerMemberName: 

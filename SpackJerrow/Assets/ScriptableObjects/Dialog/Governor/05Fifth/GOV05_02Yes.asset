@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: GOV05_02Yes
+  m_EditorClassIdentifier: 
+  teaserText: Yes
+  playerText: Sure thing. Your crew will be drunk for days!
+  playerClip: {fileID: 0}
+  npcText: I hope so. Okay, lets build  the connection to Bubu-Arrr-Ossa and I will
+    finally get my schnuckidipuz back!
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: be6e4973137876742b52424d0d364b60, type: 2}
+  rightChoice: {fileID: 0}
+  dialogProgressIncrement: 1
+  requieredItemsRemove:
+  - item:
+      relativePathFromResource: 
+      assetName: 
+      assetExtension: 
+      wasAlreadyValidated: 0
+      runtimeRef: {fileID: 11400000, guid: c8e4b56c73bbe7946bd03349c2a081ec, type: 2}
+    itemCount: 30
+  requieredItemsKeep: []
+  triggerMemberName: 

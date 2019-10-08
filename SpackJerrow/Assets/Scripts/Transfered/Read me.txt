@@ -1,0 +1,1 @@
+All scripts in this folder were written by myself but already existed before this project started.

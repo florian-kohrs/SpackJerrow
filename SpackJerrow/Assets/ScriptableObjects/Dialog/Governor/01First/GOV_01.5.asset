@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: GOV_01.5
+  m_EditorClassIdentifier: 
+  teaserText: '[continue]'
+  playerText: 
+  playerClip: {fileID: 0}
+  npcText: Your task is it, to bring back my toy from the filthy pirate Bubu-Arrr-Ossa!
+    How could he dare to steal my little Schnuckidipuz! As first step you must capture
+    the steersman of Bubu. He must be hiding somewhere on this Island!
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: 376b232e8dac6c4429306d9899be3c13, type: 2}
+  rightChoice: {fileID: 11400000, guid: f1fdcdbb63321ed4d83e748555f7c740, type: 2}
+  dialogProgressIncrement: 0
+  requieredItemsRemove: []
+  requieredItemsKeep: []
+  triggerMemberName: 

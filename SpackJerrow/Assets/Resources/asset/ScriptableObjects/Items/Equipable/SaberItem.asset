@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 116bcf2d9dfebd9428a69e879e6e81ed, type: 3}
+  m_Name: SaberItem
+  m_EditorClassIdentifier: 
+  assetRef:
+    relativePathFromResource: asset/ScriptableObjects/Items/Equipable
+    assetName: SaberItem
+    assetExtension: asset
+    wasAlreadyValidated: 1
+    runtimeRef: {fileID: 11400000}
+  itemClip: {fileID: 8300000, guid: b669733c5ffbfbc44921096db00f43c7, type: 3}
+  gameObject: {fileID: 8290283994903853997, guid: 0afdf38e5741f42448e0e687e4898007,
+    type: 3}
+  icon: {fileID: 21300000, guid: 9c8e3843e1acd7e45b05e3a1a55fc8f5, type: 3}
+  itemName: Saber
+  itemDescription: A powerful saber forged by the devil himself
+  value: 0
+  canBeSoled: 1
+  itemType: 0
+  equipLocalPosition: {x: 0.369, y: -0.015, z: 0.365}
+  equipLocalEulerAngle: {x: -98.448, y: 2.778992, z: -22.76801}
+  localScale: {x: 0.4, y: 0.4, z: 0.4}

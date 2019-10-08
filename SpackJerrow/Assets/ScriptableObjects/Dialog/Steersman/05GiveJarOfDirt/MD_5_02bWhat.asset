@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: MD_5_02bWhat
+  m_EditorClassIdentifier: 
+  teaserText: The what?
+  playerText: Do i have what?
+  playerClip: {fileID: 0}
+  npcText: The jar of dirt. I told you to get it...
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: 5252c408106aeba48905c43db0edc985, type: 2}
+  rightChoice: {fileID: 11400000, guid: e1101ad9f9d5bc148a054b73501d27b0, type: 2}
+  dialogProgressIncrement: 1
+  requieredItemsRemove: []
+  requieredItemsKeep: []
+  addedItems: []
+  triggerMemberNames: []

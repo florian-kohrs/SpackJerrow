@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: Inn_01_06_03TalkEvenMore 3
+  m_EditorClassIdentifier: 
+  teaserText: '[continue]'
+  playerText: 
+  playerClip: {fileID: 0}
+  npcText: He stole a toy from the governour but he got attacked. His steersman good
+    captured but managed to escape. Now he`s hiding somewhere on this Island. Bubu
+    will have a hard time without him
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: 19ef2b9047147694cafa61d6e33e66fb, type: 2}
+  rightChoice: {fileID: 11400000, guid: 73e487193546d9c46869bae99ec38048, type: 2}
+  dialogProgressIncrement: 0
+  requieredItemsRemove: []
+  requieredItemsKeep: []
+  triggerMemberName: 

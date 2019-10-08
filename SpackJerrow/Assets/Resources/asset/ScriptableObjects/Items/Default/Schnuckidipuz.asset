@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc832663cbaef844a9e60e83ee03e67, type: 3}
+  m_Name: Schnuckidipuz
+  m_EditorClassIdentifier: 
+  assetRef:
+    relativePathFromResource: asset/ScriptableObjects/Items/Default
+    assetName: Schnuckidipuz
+    assetExtension: asset
+    wasAlreadyValidated: 1
+    runtimeRef: {fileID: 11400000}
+  itemClip: {fileID: 8300000, guid: efb684f08c1684d4e9c45aa4d8d0a48d, type: 3}
+  gameObject: {fileID: 3612918244537156663, guid: 8c1dd53d773608d45a9f019346612dee,
+    type: 3}
+  icon: {fileID: 21300000, guid: c00d6ed36a11f4a4196be49abd972575, type: 3}
+  itemName: Schnuckidipuz
+  itemDescription: 'A very ugly '
+  value: 1
+  canBeSoled: 0
+  itemType: 2

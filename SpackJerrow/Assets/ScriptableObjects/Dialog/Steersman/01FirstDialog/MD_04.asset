@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: MD_04
+  m_EditorClassIdentifier: 
+  teaserText: What do you need?
+  playerText: So what do you need exactly?
+  playerClip: {fileID: 0}
+  npcText: Well at first I need a teleport Stone. It is burried on a nearby Island,
+    hidden behind cliffs.
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: a5eb22941cb983f4c87b1f4ae7abc889, type: 2}
+  rightChoice: {fileID: 11400000, guid: 32da5d9307ac3014196fcf01a99cb99b, type: 2}
+  dialogProgressIncrement: 0
+  requieredItemsRemove:
+  - item:
+      relativePathFromResource: 
+      assetName: 
+      assetExtension: 
+      wasAlreadyValidated: 0
+      runtimeRef: {fileID: 11400000, guid: 03fdc373b885e244594f40d6453d56aa, type: 2}
+    itemCount: 1
+  requieredItemsKeep: []
+  triggerMemberName: 

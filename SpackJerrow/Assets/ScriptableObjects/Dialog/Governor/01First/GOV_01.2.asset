@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: GOV_01.2
+  m_EditorClassIdentifier: 
+  teaserText: '[continue]'
+  playerText: 
+  playerClip: {fileID: 0}
+  npcText: However, in my infinite grace, I shall allow you to fight on the right
+    side this time, before sending you back to your exile.
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: c32784b4663c4b049afa93902463dc20, type: 2}
+  rightChoice: {fileID: 11400000, guid: 839b3bd1270304e4b8c3a798f11f7a5c, type: 2}
+  dialogProgressIncrement: 0
+  requieredItemsRemove: []
+  requieredItemsKeep: []
+  triggerMemberName: 

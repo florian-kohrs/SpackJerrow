@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7f9be7dafa571428467150e1f095ee, type: 3}
+  m_Name: AD_Start_05
+  m_EditorClassIdentifier: 
+  teaserText: My reward?
+  playerText: So what exactly is my reward?
+  playerClip: {fileID: 0}
+  npcText: Whatever you want!
+  npcClip: {fileID: 0}
+  leftChoice: {fileID: 11400000, guid: 2fa6c9df07ef00e4391c92853dce2875, type: 2}
+  rightChoice: {fileID: 11400000, guid: f1301797d21c64c4a955330ace679446, type: 2}
+  increaseDialogProgress: 0
+  requieredItemsRemove: []
+  requieredItemsKeep: []
+  triggerMemberName: 

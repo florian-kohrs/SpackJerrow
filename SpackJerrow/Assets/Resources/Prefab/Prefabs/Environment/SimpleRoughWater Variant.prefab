@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9032883511170639351
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7293624584988295758, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Name
+      value: SimpleRoughWater Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295765, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295762, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295760, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: center
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295760, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: landscapeSmoothness
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295760, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: landscapeHeightScale
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295760, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: waveTravelSpeed
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295760, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: waveAmplitude
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293624584988295760, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: waveFrequenzy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8809051234190171933, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4587174851751324093, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988792947371469644, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 43035066548675826, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301088246829629220, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077140552315190731, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622797457975680286, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029817966070934462, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953935278152608079, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6827141624387856113, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4740353725723589927, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3328654360133058504, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2194302224449313439, guid: 090cd3a58768f01479ba820b4aa7e572,
+        type: 3}
+      propertyPath: assetRef.assetName
+      value: SimpleRoughWater Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 090cd3a58768f01479ba820b4aa7e572, type: 3}
