@@ -15,11 +15,12 @@ MonoBehaviour:
   teaserText: I will bring it to you
   playerText: Aye, I will come back when I found the stone!
   playerClip: {fileID: 0}
-  npcText: 
+  npcText: Good.
   npcClip: {fileID: 0}
   leftChoice: {fileID: 0}
   rightChoice: {fileID: 0}
   dialogProgressIncrement: 0
   requieredItemsRemove: []
   requieredItemsKeep: []
-  triggerMemberName: 
+  addedItems: []
+  triggerMemberNames: []

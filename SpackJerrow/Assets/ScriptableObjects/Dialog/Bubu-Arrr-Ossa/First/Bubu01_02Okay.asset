@@ -30,4 +30,5 @@ MonoBehaviour:
       wasAlreadyValidated: 0
       runtimeRef: {fileID: 11400000, guid: 630d2e57752ecce4a908b362ba28b344, type: 2}
     itemCount: 1
-  triggerMemberName: 
+  addedItems: []
+  triggerMemberNames: []

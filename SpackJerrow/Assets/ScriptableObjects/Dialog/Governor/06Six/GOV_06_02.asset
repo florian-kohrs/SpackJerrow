@@ -30,4 +30,6 @@ MonoBehaviour:
       runtimeRef: {fileID: 11400000, guid: 3d12ded8d0ef016448a0b7743865a5fb, type: 2}
     itemCount: 1
   requieredItemsKeep: []
-  triggerMemberName: ActivateSchnuckidipuz
+  addedItems: []
+  triggerMemberNames:
+  - ActivateSchnuckidipuz

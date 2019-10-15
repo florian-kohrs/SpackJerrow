@@ -22,4 +22,6 @@ MonoBehaviour:
   dialogProgressIncrement: 1
   requieredItemsRemove: []
   requieredItemsKeep: []
-  triggerMemberName: GiveDocument
+  addedItems: []
+  triggerMemberNames:
+  - GiveDocument

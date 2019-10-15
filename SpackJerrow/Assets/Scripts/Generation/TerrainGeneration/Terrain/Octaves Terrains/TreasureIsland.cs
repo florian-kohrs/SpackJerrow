@@ -103,12 +103,12 @@ public class TreasureIsland : Island
                 treasurePosition = locationProgress * treasureMaxDistance;
 
                 treasurePosition = new Vector2(Mathf.Round(treasurePosition.x), Mathf.Round(treasurePosition.y));
-                locationProgress = ToProgress(treasurePosition + islandCenter);
+                locationProgress = LocalPosToProgress(treasurePosition + islandCenter);
             }
             else
             {
                 treasurePosition = TransformToLocal2DPosition(chestInfo.chest.transform.position);
-                locationProgress = ToProgress(treasurePosition + islandCenter);
+                locationProgress = LocalPosToProgress(treasurePosition + islandCenter);
             }
             
             chestInfo.localPosition = treasurePosition;

@@ -30,4 +30,5 @@ MonoBehaviour:
     itemCount: 1
   requieredItemsKeep: []
   addedItems: []
-  triggerMemberName: RepairPortal
+  triggerMemberNames:
+  - RepairPortal

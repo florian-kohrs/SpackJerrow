@@ -74,7 +74,6 @@ public abstract class OctavesGenerationTerrain<T> : TerrainBuilder<T>
     {
         noiseMap = null;
         ShowTerrain(true);
-        AddColliderIfExisting();
     }
     
     private void AddColliderIfExisting()

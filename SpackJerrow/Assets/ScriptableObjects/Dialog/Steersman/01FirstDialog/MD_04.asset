@@ -21,13 +21,7 @@ MonoBehaviour:
   leftChoice: {fileID: 11400000, guid: a5eb22941cb983f4c87b1f4ae7abc889, type: 2}
   rightChoice: {fileID: 11400000, guid: 32da5d9307ac3014196fcf01a99cb99b, type: 2}
   dialogProgressIncrement: 0
-  requieredItemsRemove:
-  - item:
-      relativePathFromResource: 
-      assetName: 
-      assetExtension: 
-      wasAlreadyValidated: 0
-      runtimeRef: {fileID: 11400000, guid: 03fdc373b885e244594f40d6453d56aa, type: 2}
-    itemCount: 1
+  requieredItemsRemove: []
   requieredItemsKeep: []
-  triggerMemberName: 
+  addedItems: []
+  triggerMemberNames: []

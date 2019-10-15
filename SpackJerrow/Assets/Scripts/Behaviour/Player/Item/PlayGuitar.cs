@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayGuitar : ItemBehaviour
 {
 
+    private PlayerSkillController guitarSkill;
+
     private float pressedDuration;
 
     public float startSongAfter = 0.3f;
@@ -14,16 +16,20 @@ public class PlayGuitar : ItemBehaviour
 
     public List<AudioClip> singleTone;
 
-    public List<AudioClip> songs;
+    public List<AudioClipList> songs;
 
     public AudioSource audioSource;
-
+    
     protected new void Start()
     {
         base.Start();
         if(audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
+        }
+        if(guitarSkill == null)
+        {
+            guitarSkill = GameManager.GetPlayerComponent<PlayerSkillController>();
         }
     }
 
@@ -36,7 +42,7 @@ public class PlayGuitar : ItemBehaviour
                 pressedDuration += Time.deltaTime;
                 if (pressedDuration >= startSongAfter && !isPlaying)
                 {
-                    audioSource.clip = songs[Random.Range(0, songs.Count)];
+                    audioSource.clip = songs[guitarSkill.guitarSkill][Random.Range(0, songs.Count)];
                     audioSource.Play();
                     isPlaying = true;
                 }

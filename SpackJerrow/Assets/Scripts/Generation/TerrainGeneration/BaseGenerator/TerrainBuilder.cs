@@ -126,37 +126,49 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
     /// </summary>
     /// <param name="position"></param>
     /// <returns></returns>
-    public Vector2 ToProgress(Vector2 position)
+    public Vector2 LocalPosToProgress(Vector2 position)
     {
         return new Vector2(ToXProgress(position.x), ToZProgress(position.y));
     }
 
-    public Vector2 ProgressToXAndZIndex(Vector2 progress)
+    public Vector2Int ProgressToXAndZIndex(Vector2 progress)
     {
-        return new Vector2(progress.x * VerticesXCount, progress.y * VerticesZCount);
+        return new Vector2Int(Mathf.RoundToInt(progress.x * XSize), Mathf.RoundToInt(progress.y * ZSize));
     }
 
     /// <summary>
-    /// transforms a position to the x and z progress on the map
+    /// transforms a global position to the x and z progress on the map
     /// </summary>
     /// <param name="position"></param>
     /// <returns></returns>
-    public Vector2 ToLocalProgress(Vector3 position)
+    public Vector2 GlobalPosToProgress(Vector3 position)
     {
         Vector3 localPosition = TransformToAnkorPosition(position);
         return new Vector2(ToXProgress(localPosition.x), ToZProgress(localPosition.z));
     }
 
-    public Vector2 ToLocalProgress(Vector2 position)
+    public bool TryGlobalPosToProgress(Vector3 position, out Vector2 progress)
     {
-        return ToLocalProgress(new Vector3(position.x, 0, position.y));
+        progress = GlobalPosToProgress(position);
+        bool result = progress.x <= 1 && progress.x >= 0 && progress.y <= 1 && progress.y >= 0;
+        return result;
     }
 
-    public Vector2 ToLocalRotatedProgress(Vector3 position)
+    public Vector2 GlobalPosToProgress(Vector2 position)
+    {
+        return GlobalPosToProgress(new Vector3(position.x, 0, position.y));
+    }
+
+    /// <summary>
+    /// not working!
+    /// </summary>
+    /// <param name="position"></param>
+    /// <returns></returns>
+    public Vector2 GlobalPosToRotatedProgress(Vector3 position)
     {
         Vector3 distance = transform.position - position;
         distance = transform.TransformDirection(distance) * -1 + offset;
-        return ToProgress(new Vector2(distance.x, distance.z));
+        return LocalPosToProgress(new Vector2(distance.x, distance.z));
     }
 
     protected virtual Vector3 TransformToAnkorPosition(Vector3 pos)
@@ -295,7 +307,7 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
         }
 
         IndexInfo result = new IndexInfo();
-        
+
         int delta = (int)Mathf.Sign(previous.OriginalZDiff) * VerticesXCount;
         result.index = previous.index + delta;
         result.OriginalZDiff = 1 - Mathf.Abs(previous.OriginalZDiff);
@@ -386,7 +398,7 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
     {
         IndexInfo[] result = new IndexInfo[width * length];
 
-        IndexInfo startInfo = GetNearestIndexInfo(ToLocalProgress(position));
+        IndexInfo startInfo = GetNearestIndexInfo(GlobalPosToProgress(position));
 
         int startX = startInfo.xIndex - (width / 2);
 
@@ -544,16 +556,16 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
 
     public float HeightOnPosition(Vector2 position)
     {
-        return GetAccurateLocalHeightOnProgress(ToLocalProgress(position)) /*+ transform.position.y*/;
+        return GetAccurateLocalHeightOnProgress(GlobalPosToProgress(position)) /*+ transform.position.y*/;
     }
 
     public float AbsoluteHeightOnNearestIndex(Vector2 position)
     {
-        return vertices[GetNearestIndex(ToLocalProgress(position))].y + transform.position.y;
+        return vertices[GetNearestIndex(GlobalPosToProgress(position))].y + transform.position.y;
     }
 
     public float RelativeHeightOnNearestIndex(Vector2 position)
     {
-        return vertices[GetNearestIndex(ToLocalProgress(position))].y;
+        return vertices[GetNearestIndex(GlobalPosToProgress(position))].y;
     }
 }

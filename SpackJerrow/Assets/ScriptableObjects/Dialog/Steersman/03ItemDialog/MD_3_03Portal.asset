@@ -23,4 +23,5 @@ MonoBehaviour:
   requieredItemsRemove: []
   requieredItemsKeep: []
   addedItems: []
-  triggerMemberName: LookAtPortal
+  triggerMemberNames:
+  - LookAtPortal

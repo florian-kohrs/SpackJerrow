@@ -24,4 +24,6 @@ MonoBehaviour:
   requieredItemsRemove: []
   requieredItemsKeep: []
   addedItems: []
-  triggerMemberName: OpenLookPermuda
+  triggerMemberNames:
+  - OpenPermuda
+  - LookAtTriangle

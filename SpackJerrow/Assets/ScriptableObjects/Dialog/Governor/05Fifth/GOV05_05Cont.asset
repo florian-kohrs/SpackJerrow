@@ -23,4 +23,6 @@ MonoBehaviour:
   dialogProgressIncrement: 0
   requieredItemsRemove: []
   requieredItemsKeep: []
-  triggerMemberName: MakeCrewDrunk
+  addedItems: []
+  triggerMemberNames:
+  - MakeCrewDrunk

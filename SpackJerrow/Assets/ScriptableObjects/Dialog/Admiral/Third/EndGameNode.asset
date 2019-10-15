@@ -22,4 +22,6 @@ MonoBehaviour:
   dialogProgressIncrement: 0
   requieredItemsRemove: []
   requieredItemsKeep: []
-  triggerMemberName: 
+  addedItems: []
+  triggerMemberNames:
+  - EndGame

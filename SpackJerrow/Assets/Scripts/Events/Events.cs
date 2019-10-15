@@ -173,11 +173,10 @@ public class Events
         );
     }
 
-    public static void OpenLookPermuda()
+    public static void OpenPermuda()
     {
         GameObject f = GameObject.FindGameObjectWithTag("PermudaTri");
         f.GetComponent<StartFog>().EnableFog();
-        LookAtTriangle();
     }
 
     private static void LookAtTriangle()

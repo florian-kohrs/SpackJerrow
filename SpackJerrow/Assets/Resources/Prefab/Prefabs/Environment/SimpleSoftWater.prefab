@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterObjects: []
   water: {fileID: 378079993405225162}
+  waveWater: {fileID: 0}
 --- !u!65 &378079993405225166
 BoxCollider:
   m_ObjectHideFlags: 0

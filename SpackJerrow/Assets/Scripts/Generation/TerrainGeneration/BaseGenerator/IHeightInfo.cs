@@ -14,7 +14,7 @@ public interface IHeightInfo
 
     IndexInfo GetNearestIndexInfo(Vector2 position);
 
-    Vector2 ToLocalProgress(Vector2 pos);
+    Vector2 GlobalPosToProgress(Vector2 pos);
 
 }
 

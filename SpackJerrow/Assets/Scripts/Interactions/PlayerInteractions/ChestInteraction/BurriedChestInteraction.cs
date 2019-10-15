@@ -45,7 +45,7 @@ public class BurriedChestInteraction : LootChestInteraction
         for(int i = 0; i < checkForSurface.Length && !canBeOpened; i++)
         {
             Vector3 point = checkForSurface[i].position;
-            IndexInfo info = surface.GetNearestIndexInfo(surface.ToLocalProgress(new Vector2(point.x, point.z)));
+            IndexInfo info = surface.GetNearestIndexInfo(surface.GlobalPosToProgress(new Vector2(point.x, point.z)));
             float height = surface.AbsoluteHeightOnNearestIndex(new Vector2(point.x, point.z));
             if (point.y > height) 
             {
