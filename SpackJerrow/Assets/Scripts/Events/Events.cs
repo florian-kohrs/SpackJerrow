@@ -24,6 +24,8 @@ public class Events
 
     private const string FINDABLE_OBJECTS_TAG = "Findables";
 
+    private const string MAP_ONE_MAINISLAND_NAME = "MainIsland";
+    
     #region findables names
 
     #region stegs
@@ -74,13 +76,23 @@ public class Events
 
     public static void RepairPortal()
     {
-        GameObject portal = GameObject.FindGameObjectWithTag("Portal");
-        portal.GetComponent<MeshRenderer>().enabled = true;
-        portal.GetComponent<BoxCollider>().enabled = true;
+        GameObject portal = FindGameObjectWithTag("Portal");
+        portal.GetComponent<TeleportActivator>().Activate();
+    }
+
+    private static void LookAt(GameObject gameObject)
+    {
+        LookAt(gameObject.GetComponent<CameraDirector>());
+    }
+
+    private static void LookAt(CameraDirector director)
+    {
+        director.AnimateCamera(GameManager.PlayerMainCamera.transform);
     }
 
     public static void LookAtMainIsland()
     {
+        
         Vector3 observationPosition = new Vector3(-134.2f, 45.1f, 78.3f);
         Vector3 observationEuler = new Vector3(30.4f, -18.32f, 0);
 
@@ -156,6 +168,8 @@ public class Events
         Vector3 observationPosition = new Vector3(-253.2f, 35.7f, 119.1f);
         Vector3 observationEuler = new Vector3(22.306f, -90f, 0);
 
+
+
         Transform cam = Camera.main.transform;
         Vector3 pos = cam.localPosition;
         Vector3 euler = cam.localEulerAngles;
@@ -175,8 +189,8 @@ public class Events
 
     public static void OpenPermuda()
     {
-        GameObject f = GameObject.FindGameObjectWithTag("PermudaTri");
-        f.GetComponent<StartFog>().EnableFog();
+        GameObject f = FindGameObjectWithTag("PermudaTri");
+        f.GetComponentInChildren<StartFog>().EnableFog();
     }
 
     private static void LookAtTriangle()

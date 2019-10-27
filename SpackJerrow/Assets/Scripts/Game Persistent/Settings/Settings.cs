@@ -14,4 +14,6 @@ public class Settings
 
     public float cameraSensitivity = 20;
 
+    public float cameraSequenceAnimationTime = 3;
+
 }

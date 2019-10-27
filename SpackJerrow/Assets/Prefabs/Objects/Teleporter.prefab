@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 7202655570589460170}
   - component: {fileID: 8486959541411466163}
   - component: {fileID: 7885408554319501664}
+  - component: {fileID: 141459449}
+  - component: {fileID: 141459450}
+  - component: {fileID: 141459451}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -49,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050375733768146225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -88,7 +91,7 @@ BoxCollider:
   m_GameObject: {fileID: 2050375733768146225}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0000001, z: 1.0000002}
   m_Center: {x: -0.000061035156, y: 0.0000009536743, z: 0}
@@ -105,12 +108,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dontSaveScriptValues: 0
-  nextSceneName: 
-  spawnPosition: {x: 0, y: 0, z: 0}
-  spawnRotation: {x: 0, y: 0, z: 0}
+  nextSceneName: GrindMap
+  spawnPosition: {x: 234, y: 1, z: -128}
+  spawnRotation: {x: 0, y: -100, z: 0}
+  isActive: 0
   saveCurrent: 1
-  loadNext: 1
+  loadNext: 0
   portalActivationDelay: 0
+--- !u!114 &141459449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050375733768146225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347e85cd92e21284992ce4eb4628e964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  component: {fileID: 0}
+--- !u!114 &141459450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050375733768146225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57fcf2888da50a8489983ebdd5f8e884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  component: {fileID: 0}
+--- !u!114 &141459451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050375733768146225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b85916aaec5554d8e39982652dbaa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4420013849565751603
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,9 +162,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 573487130176764540}
+  - component: {fileID: 1404388545635028154}
+  - component: {fileID: 3051106908514221300}
   m_Layer: 0
   m_Name: Teleporter
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +191,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1404388545635028154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420013849565751603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b971054d5d827364c978cc9a1a8f01c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spectatorHeight: 10
+  distance: 15
+--- !u!114 &3051106908514221300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4420013849565751603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb1f771202661646834712e08b75415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportMesh: {fileID: 7202655570589460170}
+  teleportCollider: {fileID: 8486959541411466163}
 --- !u!1 &4629719089681997108
 GameObject:
   m_ObjectHideFlags: 0

@@ -9891,12 +9891,12 @@ PrefabInstance:
       propertyPath: drinkAnimation.animations.Array.data[2].timeNeeded
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 9077609626787643499, guid: d13a45da16dc9464c814c5a10a6ae5d9,
+    - target: {fileID: 6220136899290463945, guid: d13a45da16dc9464c814c5a10a6ae5d9,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6220136899290463945, guid: d13a45da16dc9464c814c5a10a6ae5d9,
+    - target: {fileID: 9077609626787643499, guid: d13a45da16dc9464c814c5a10a6ae5d9,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -10886,11 +10886,6 @@ PrefabInstance:
       propertyPath: fpsDisplayer
       value: 
       objectReference: {fileID: 835149109950921808}
-    - target: {fileID: 1456908392389705253, guid: f8dab469f63deca4ea3a4783809eaa93,
-        type: 3}
-      propertyPath: m_Text
-      value: 65/200
-      objectReference: {fileID: 0}
     - target: {fileID: 1685442700926823359, guid: f8dab469f63deca4ea3a4783809eaa93,
         type: 3}
       propertyPath: m_Name
@@ -10945,6 +10940,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456908392389705253, guid: f8dab469f63deca4ea3a4783809eaa93,
+        type: 3}
+      propertyPath: m_Text
+      value: 65/200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8dab469f63deca4ea3a4783809eaa93, type: 3}

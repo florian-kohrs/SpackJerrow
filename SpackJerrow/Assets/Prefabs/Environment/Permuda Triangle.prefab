@@ -99,9 +99,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2473333836939195576}
+  - component: {fileID: 1812557291887258174}
   m_Layer: 0
   m_Name: Permuda Triangle
-  m_TagString: Untagged
+  m_TagString: PermudaTri
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +125,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1812557291887258174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2473333836939195577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b971054d5d827364c978cc9a1a8f01c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spectatorHeight: 15
+  distance: 25
+--- !u!114 &202130529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639130865248009256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7962afe9f65bea4ab6233347061a2ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontSaveScriptValues: 0
+  particle: {fileID: 2639130865248009254}
+  fogEnabled: 0
 --- !u!114 &2580198601293615413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,13 +297,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: slopeXFactor
-      value: 21
+      propertyPath: terrainWidth
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: slopeZFactor
-      value: 21
+      propertyPath: terrainLength
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -282,33 +312,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
+      propertyPath: slopeXFactor
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -349,6 +354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].value
       value: 1.0622101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
+        type: 3}
+      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -394,6 +404,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xSlopeHeightCurve.m_Curve.Array.data[4].value
       value: -1.8503649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
+        type: 3}
+      propertyPath: slopeZFactor
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -485,26 +500,6 @@ PrefabInstance:
       propertyPath: zSlopeHeightCurve.m_Curve.Array.data[4].value
       value: -1.8503649
       objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: terrainWidth
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: terrainLength
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289387, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289389, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -535,16 +530,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fog
-      objectReference: {fileID: 0}
-    - target: {fileID: 500778683027001820, guid: 09f7a95504393204287460275bad234a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 500778683027001820, guid: 09f7a95504393204287460275bad234a,
-        type: 3}
-      propertyPath: m_TagString
-      value: PermudaTri
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001811, guid: 09f7a95504393204287460275bad234a,
         type: 3}
@@ -608,8 +593,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 50
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
@@ -633,33 +628,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 1.2020161
-      objectReference: {fileID: 0}
-    - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
-        type: 3}
       propertyPath: InitialModule.startSize.minMaxState
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
+      propertyPath: InitialModule.startSize.scalar
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
+      propertyPath: InitialModule.startSize.minScalar
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
       propertyPath: InitialModule.startSize.maxCurve.m_Curve.Array.data[1].time
       value: 0.02469587
+      objectReference: {fileID: 0}
+    - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
+        type: 3}
+      propertyPath: InitialModule.startSize.maxCurve.m_Curve.Array.data[1].value
+      value: 0.2166934
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
@@ -683,18 +673,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
-      propertyPath: InitialModule.startSize.maxCurve.m_Curve.Array.data[1].value
-      value: 0.2166934
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 10
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0.7
+      propertyPath: ShapeModule.radius.value
+      value: 1.2020161
+      objectReference: {fileID: 0}
+    - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
         type: 3}
@@ -726,11 +721,6 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.b
       value: 0.2627451
       objectReference: {fileID: 0}
-    - target: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f7a95504393204287460275bad234a, type: 3}
 --- !u!1 &2639130865248009256 stripped
@@ -742,6 +732,12 @@ GameObject:
 --- !u!4 &2639130865248009255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 500778683027001811, guid: 09f7a95504393204287460275bad234a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2473333836273544692}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2639130865248009254 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 500778683027001810, guid: 09f7a95504393204287460275bad234a,
     type: 3}
   m_PrefabInstance: {fileID: 2473333836273544692}
   m_PrefabAsset: {fileID: 0}
@@ -834,13 +830,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: slopeXFactor
-      value: 21
+      propertyPath: terrainWidth
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: slopeZFactor
-      value: 21
+      propertyPath: terrainLength
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -849,33 +845,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
+      propertyPath: slopeXFactor
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -916,6 +887,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].value
       value: 1.0622101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
+        type: 3}
+      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -961,6 +937,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xSlopeHeightCurve.m_Curve.Array.data[4].value
       value: -1.8503649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
+        type: 3}
+      propertyPath: slopeZFactor
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -1051,26 +1032,6 @@ PrefabInstance:
         type: 3}
       propertyPath: zSlopeHeightCurve.m_Curve.Array.data[4].value
       value: -1.8503649
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: terrainWidth
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: terrainLength
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289387, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289389, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -1180,13 +1141,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: slopeXFactor
-      value: 21
+      propertyPath: terrainWidth
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: slopeZFactor
-      value: 21
+      propertyPath: terrainLength
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -1195,33 +1156,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].outSlope
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inWeight
-      value: 0.33333334
+      propertyPath: slopeXFactor
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -1262,6 +1198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].value
       value: 1.0622101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
+        type: 3}
+      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[2].inWeight
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -1307,6 +1248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xSlopeHeightCurve.m_Curve.Array.data[4].value
       value: -1.8503649
+      objectReference: {fileID: 0}
+    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
+        type: 3}
+      propertyPath: slopeZFactor
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
@@ -1397,26 +1343,6 @@ PrefabInstance:
         type: 3}
       propertyPath: zSlopeHeightCurve.m_Curve.Array.data[4].value
       value: -1.8503649
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: xSlopeHeightCurve.m_Curve.Array.data[1].inWeight
-      value: 0.33333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: terrainWidth
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289390, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: terrainLength
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2870553492828289387, guid: 93bf0b5e45bf1a944a8c927b7168f490,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2870553492828289389, guid: 93bf0b5e45bf1a944a8c927b7168f490,
         type: 3}
