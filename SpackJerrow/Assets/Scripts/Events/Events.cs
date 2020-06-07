@@ -82,13 +82,13 @@ public class Events
 
     private static void LookAt(GameObject gameObject)
     {
-        LookAt(gameObject.GetComponent<CameraDirector>());
+        //LookAt(gameObject.GetComponent<CameraDirector>());
     }
 
-    private static void LookAt(CameraDirector director)
-    {
-        director.AnimateCamera(GameManager.PlayerMainCamera.transform);
-    }
+    //private static void LookAt(CameraDirector director)
+    //{
+    //    director.AnimateCamera(GameManager.PlayerMainCamera.transform);
+    //}
 
     public static void LookAtMainIsland()
     {
