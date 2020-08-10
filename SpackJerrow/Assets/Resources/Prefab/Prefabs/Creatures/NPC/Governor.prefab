@@ -186,6 +186,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Governor
       objectReference: {fileID: 0}
+    - target: {fileID: 8443918569997200936, guid: 2ee877c61e42f664687e65a8592c3422,
+        type: 3}
+      propertyPath: assetRef.assetName
+      value: Governor
+      objectReference: {fileID: 0}
     - target: {fileID: 1060971379234616399, guid: 2ee877c61e42f664687e65a8592c3422,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,11 +260,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.45994794
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443918569997200936, guid: 2ee877c61e42f664687e65a8592c3422,
-        type: 3}
-      propertyPath: assetRef.assetName
-      value: Governor
       objectReference: {fileID: 0}
     - target: {fileID: 820285916840437239, guid: 2ee877c61e42f664687e65a8592c3422,
         type: 3}

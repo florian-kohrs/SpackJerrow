@@ -24,13 +24,12 @@ public class Events
 
     private const string FINDABLE_OBJECTS_TAG = "Findables";
 
-    private const string MAP_ONE_MAINISLAND_NAME = "MainIsland";
-    
     #region findables names
 
-    #region stegs
+    #region mainmap
 
     private const string MAP_ONE_MAINISLAND_LANDINGSTAGE = "WaitPositionMainLandingStage";
+
 
     #endregion
 
@@ -55,7 +54,7 @@ public class Events
         return Findables.Where(g => g.name == name).FirstOrDefault();
     }
 
-    private static GameObject FindGameObjectWithTag(string tag)
+    public static GameObject FindGameObjectWithTag(string tag)
     {
         GameObject result;
         if (!uniqueSceneObject.TryGetValue(tag, out result))
@@ -77,23 +76,16 @@ public class Events
     public static void RepairPortal()
     {
         GameObject portal = FindGameObjectWithTag("Portal");
-        portal.GetComponent<TeleportActivator>().Activate();
-    }
 
-    private static void LookAt(GameObject gameObject)
-    {
-        //LookAt(gameObject.GetComponent<CameraDirector>());
+        portal.GetComponent<MeshRenderer>().enabled = true;
+        portal.GetComponent<BoxCollider>().enabled = true;
     }
-
-    //private static void LookAt(CameraDirector director)
-    //{
-    //    director.AnimateCamera(GameManager.PlayerMainCamera.transform);
-    //}
 
     public static void LookAtMainIsland()
     {
-        
-        Vector3 observationPosition = new Vector3(-134.2f, 45.1f, 78.3f);
+        GameObject portal = FindGameObjectWithTag("Portal");
+
+        Vector3 observationPosition = portal.transform.position + portal.transform.right * 10 + portal.transform.up * 15;
         Vector3 observationEuler = new Vector3(30.4f, -18.32f, 0);
 
         Transform cam = Camera.main.transform;
@@ -168,8 +160,6 @@ public class Events
         Vector3 observationPosition = new Vector3(-253.2f, 35.7f, 119.1f);
         Vector3 observationEuler = new Vector3(22.306f, -90f, 0);
 
-
-
         Transform cam = Camera.main.transform;
         Vector3 pos = cam.localPosition;
         Vector3 euler = cam.localEulerAngles;
@@ -186,16 +176,18 @@ public class Events
             })
         );
     }
-
+    
     public static void OpenPermuda()
     {
         GameObject f = FindGameObjectWithTag("PermudaTri");
-        f.GetComponentInChildren<StartFog>().EnableFog();
+        f.GetComponent<StartFog>().EnableFog();
     }
 
-    private static void LookAtTriangle()
+    public static void LookAtTriangle()
     {
-        Vector3 observationPosition = new Vector3(-182.81f, 65.13f, 41.95f);
+        GameObject f = FindGameObjectWithTag("PermudaTri");
+
+        Vector3 observationPosition = f.transform.position + f.transform.right * -20 + f.transform.forward * 40 + f.transform.up * 25;
         Vector3 observationEuler = new Vector3(27.237f, -149.538f, 0);
 
         Transform cam = Camera.main.transform;

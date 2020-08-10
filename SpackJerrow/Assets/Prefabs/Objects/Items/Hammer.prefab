@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2332044018406657726}
   - component: {fileID: 917794814921542522}
   - component: {fileID: 5197319623612342509}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5206686405148500099}
   - component: {fileID: 4272654291769138688}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 5662649639194676937}
   - component: {fileID: 5532237480840014372}
   - component: {fileID: 7082337759784032557}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

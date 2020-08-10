@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// creates a saveable copy on request
 /// </summary>
-[DisallowMultipleComponent]
 public abstract class BaseSaveableGameObject : MonoBehaviour, 
     ISaveableGameObject, ITransformObject, IComponentAssigner
 {

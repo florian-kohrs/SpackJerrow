@@ -70,6 +70,7 @@ public class DialogSystem : InterfaceMask
     public void EndCurrentDialog()
     {
         interfaceController.RemoveMask_(this);
+        GameManager.UnfreezeCamera();
     }
 
     private void SelectDialogNode(DialogNode node)
@@ -107,14 +108,16 @@ public class DialogSystem : InterfaceMask
 
     private void CallNodeEvent(DialogNode node)
     {
-        foreach(string s in node.triggerMemberNames)
+        if (node.triggerMemberNames != null)
         {
-            if (!string.IsNullOrEmpty(s))
+            foreach (string s in node.triggerMemberNames)
             {
-                typeof(Events).GetMethod(s).Invoke(null, new object[] { });
+                if (!string.IsNullOrEmpty(s))
+                {
+                    typeof(Events).GetMethod(s).Invoke(null, new object[] { });
+                }
             }
         }
-        
     }
 
     private void Update()

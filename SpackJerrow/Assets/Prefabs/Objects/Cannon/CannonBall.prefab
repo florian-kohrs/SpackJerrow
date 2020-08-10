@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8359751349070107264}
   - component: {fileID: 8718033132113909465}
   - component: {fileID: 4574132552374808247}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: CannonBall
   m_TagString: CannonBall
   m_Icon: {fileID: 0}
@@ -104,5 +104,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa85fcb861df5814a87a8bf81026cdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotPosition: {x: 0, y: 0, z: 0}
+  firedBy: {fileID: 0}
   cannonBallForce: 5

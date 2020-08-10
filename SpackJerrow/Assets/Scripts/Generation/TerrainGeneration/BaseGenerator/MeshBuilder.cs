@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
-public abstract class MeshBuilder<T> : SaveableMonoBehaviour, IMeshInfo
+public abstract class MeshBuilder<T> : SaveableMonoBehaviour
 {
 
     private float maxTriangleDistance;
@@ -41,9 +41,6 @@ public abstract class MeshBuilder<T> : SaveableMonoBehaviour, IMeshInfo
     protected Mesh mesh;
 
     protected Vector3[] vertices;
-
-    public Vector3[] Vertices => vertices;
-
     protected T[] colorData;
     protected int[] trianglePoints;
     

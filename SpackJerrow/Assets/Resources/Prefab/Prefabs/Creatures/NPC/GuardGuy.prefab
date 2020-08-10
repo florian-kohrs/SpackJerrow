@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: GuardGuy
       objectReference: {fileID: 0}
+    - target: {fileID: 3642866591499778153, guid: 89aa2af01475159468ad94cd4652f1ca,
+        type: 3}
+      propertyPath: assetRef.assetName
+      value: GuardGuy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816983967208591414, guid: 89aa2af01475159468ad94cd4652f1ca,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5267398707776070158, guid: 89aa2af01475159468ad94cd4652f1ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,16 +76,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8816983967208591414, guid: 89aa2af01475159468ad94cd4652f1ca,
-        type: 3}
-      propertyPath: MaxDistance
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3642866591499778153, guid: 89aa2af01475159468ad94cd4652f1ca,
-        type: 3}
-      propertyPath: assetRef.assetName
-      value: GuardGuy
       objectReference: {fileID: 0}
     - target: {fileID: 3185522661544173170, guid: 89aa2af01475159468ad94cd4652f1ca,
         type: 3}

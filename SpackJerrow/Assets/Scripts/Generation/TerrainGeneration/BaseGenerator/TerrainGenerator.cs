@@ -151,7 +151,7 @@ public abstract class TerrainGenerator : TerrainBuilder<Vector2>
 
     /// <summary>
     /// contains the main logic for computing the height from the given values.
-    /// Care with overriding
+    /// Care with orverriding
     /// </summary>
     /// <param name="x"></param>
     /// <param name="z"></param>
@@ -159,18 +159,15 @@ public abstract class TerrainGenerator : TerrainBuilder<Vector2>
     protected override float GetCurrentY(int x, int z)
     {
         float result = GetPerlinNoise(x, z);
-        float extraHeight = BuildPlainHeightOnIndex(x, z);
-        result += extraHeight;
 
-        return result;
-    }
-
-    protected float BuildPlainHeightOnIndex(int x, int z)
-    {
         float lengthProgress = ToScaledZProgress(z);
         float widthProgress = ToScaledXProgress(x);
 
-        return HeightEvaluater.EvaluatePlainHeight(new Vector2(widthProgress, lengthProgress));
+        float extraHeight = HeightEvaluater.EvaluatePlainHeight(new Vector2(widthProgress, lengthProgress));
+
+        result += extraHeight;
+
+        return result;
     }
 
     protected float GetPerlinNoise(int x, int z)

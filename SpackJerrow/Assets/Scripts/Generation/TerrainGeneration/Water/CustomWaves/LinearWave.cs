@@ -29,7 +29,7 @@ public class LinearWave : CustomWave
             for (int i = 0; i < waveSize; i++)
             {
 
-                IndexInfo[] points = form.GetNearestIndicies(form.LocalPosToProgress(currentPosition), false);
+                IndexInfo[] points = form.GetNearestIndicies(form.ToProgress(currentPosition), false);
 
                 foreach(IndexInfo index in points)
                 {

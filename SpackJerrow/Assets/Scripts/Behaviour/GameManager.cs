@@ -33,24 +33,6 @@ public class GameManager
 
     private GameObject player;
 
-    private Camera playerMainCamera;
-
-    public static Camera PlayerMainCamera
-    {
-        get
-        {
-            if(instance.playerMainCamera == null)
-            {
-                instance.playerMainCamera = Camera.main;
-            }
-            return instance.playerMainCamera;
-        }
-        set
-        {
-            instance.playerMainCamera = value;
-        }
-    }
-
     public static bool IsPlayerAlive
     {
         get

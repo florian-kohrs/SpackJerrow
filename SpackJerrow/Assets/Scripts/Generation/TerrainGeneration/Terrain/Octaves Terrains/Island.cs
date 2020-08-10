@@ -11,12 +11,6 @@ public class Island : OctavesColourGenerator
     [Save]
     public IslandShape shape;
 
-    protected override void Start()
-    {
-        //Environment.GetSea().RegisterWaterObstacle(this, transform.position);
-        base.Start();
-    }
-
     [Save]
     private Dictionary<Serializable2DVector, float> modifiedHeights = new Dictionary<Serializable2DVector, float>();
 
@@ -54,7 +48,7 @@ public class Island : OctavesColourGenerator
     
     public bool Dig(Vector3 position, int digSize, float digPower, float spreadFactor, float throwPower, float heapSize, Vector3 digDirection)
     {
-        Vector2 progress = GlobalPosToRotatedProgress(position);
+        Vector2 progress = ToLocalRotatedProgress(position);
         Color diggedTerrainColor = default;
         float newHeight;
         IndexInfo[] digIndices = GetCircleIndiciesAroundPosition(ShapeVec(position), digSize);

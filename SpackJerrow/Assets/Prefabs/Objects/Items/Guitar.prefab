@@ -1132,10 +1132,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 02f00e874f951ab4a8d56ed042157fcc, type: 3}
   - {fileID: 8300000, guid: 52252cc2b2dd23641bf42a3ab58986de, type: 3}
   songs:
-  - innerList:
-    - {fileID: 8300000, guid: 5b2e8fd00bdc22e4881d2b8c5a7fbcd1, type: 3}
-  - innerList:
-    - {fileID: 8300000, guid: 9670f38c93da5654dbb89d966ce6fcb6, type: 3}
+  - {fileID: 8300000, guid: 5b2e8fd00bdc22e4881d2b8c5a7fbcd1, type: 3}
   audioSource: {fileID: 6961228169490921917}
 --- !u!82 &6961228169490921917
 AudioSource:

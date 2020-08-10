@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8290283994904143753}
   - component: {fileID: 8290283994904946601}
   - component: {fileID: 8290283994906043753}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Blade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 8290283994904143755}
   - component: {fileID: 8290283994904946603}
   - component: {fileID: 8290283994906043755}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 8290283994904143757}
   - component: {fileID: 8629925886735956996}
   - component: {fileID: 2421644315013152097}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: saber_low Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,6 +205,7 @@ MonoBehaviour:
   damage: 5
   timeToIdle: 3
   defaultSwordHit:
+    colliderActivateDelay: 0.1
     animations:
     - localPosition: {x: 0.573, y: 0.075, z: 0.288}
       localEuler: {x: 148.627, y: 6.161987, z: 243.332}

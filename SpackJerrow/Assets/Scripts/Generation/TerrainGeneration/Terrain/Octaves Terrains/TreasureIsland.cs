@@ -49,6 +49,7 @@ public class TreasureIsland : Island
     {
         if (wasJustValidated || wasJustConstructed)
         {
+            SetOffset();
             InitializeTreasure();
         }
         base.Start();
@@ -103,12 +104,12 @@ public class TreasureIsland : Island
                 treasurePosition = locationProgress * treasureMaxDistance;
 
                 treasurePosition = new Vector2(Mathf.Round(treasurePosition.x), Mathf.Round(treasurePosition.y));
-                locationProgress = LocalPosToProgress(treasurePosition + islandCenter);
+                locationProgress = ToProgress(treasurePosition + islandCenter);
             }
             else
             {
                 treasurePosition = TransformToLocal2DPosition(chestInfo.chest.transform.position);
-                locationProgress = LocalPosToProgress(treasurePosition + islandCenter);
+                locationProgress = ToProgress(treasurePosition + islandCenter);
             }
             
             chestInfo.localPosition = treasurePosition;
@@ -118,7 +119,7 @@ public class TreasureIsland : Island
             chests.Add(chestInfo);
         }
     }
-
+    //-22.52298,-8.834782,-8.834782
     private void PlaceTreasure()
     {
         foreach (ChestInfo v in chests)

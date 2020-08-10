@@ -20,16 +20,7 @@ public class SeaSimulator : MonoBehaviour, IWaterCallbackReceiver
         }
     }
 
-    public void RegisterWaterObstacle(IMeshInfo mesh, Vector3 sourceGlobalPosition)
-    {
-        foreach(Vector3 p in mesh.Vertices)
-        {
-            waveWater.RegisterWaterCollider(p + sourceGlobalPosition);
-        }
-    }
-
     public DefaultWater water;
-    public WaveWater waveWater;
 
     private void Start()
     {

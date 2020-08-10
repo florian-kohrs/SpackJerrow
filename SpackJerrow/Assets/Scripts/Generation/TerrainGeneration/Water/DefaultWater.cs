@@ -34,8 +34,6 @@ public class DefaultWater : TerrainGenerator, ITerrainHeightEvaluator, IFloating
     [Tooltip("All sinking objects will sink until they reached the seaFloor")]
     public Transform seaFloor;
 
-    protected float SeaLevel => transform.position.y;
-
     public IWaterCallbackReceiver CallbackReceiver { get; set; }
 
     private new void Start()
@@ -88,7 +86,7 @@ public class DefaultWater : TerrainGenerator, ITerrainHeightEvaluator, IFloating
         noiseSeed += waterSurfaceChangeSpeed * Time.deltaTime;
         waterDistance += WaveTravelSpeed * Time.deltaTime;
 
-        Vector2 progress = GlobalPosToProgress(Center.position);
+        Vector2 progress = ToLocalProgress(Center.position);
 
         Vector2 startPosition = ProgressToXAndZIndex(progress);
 
@@ -152,7 +150,7 @@ public class DefaultWater : TerrainGenerator, ITerrainHeightEvaluator, IFloating
                 for (int z = 0; z < heightGraph[x].Length; z++)
                 {
                     current2DPosition = new Vector2(currentPosition.x, currentPosition.z);
-                    Vector2 progress = LocalPosToProgress(current2DPosition);
+                    Vector2 progress = ToProgress(current2DPosition);
                     if (progress.x > 0 || progress.x < 1 || progress.y > 0 || progress.y < 1)
                     {
                         float waveHeight;
