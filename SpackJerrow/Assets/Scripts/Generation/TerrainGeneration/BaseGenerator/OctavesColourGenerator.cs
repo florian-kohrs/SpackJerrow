@@ -14,7 +14,7 @@ public class OctavesColourGenerator : OctavesGenerationTerrain<Color>
 
     protected override void DisplayTexture()
     {
-        mesh.colors = colorData;
+        mesh.colors = ColorData;
     }
 
 }

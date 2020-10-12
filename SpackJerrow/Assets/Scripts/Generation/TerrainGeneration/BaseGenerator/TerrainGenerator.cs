@@ -42,7 +42,7 @@ public abstract class TerrainGenerator : TerrainBuilder<Vector2>
 
     protected override void DisplayTexture()
     {
-        mesh.uv = colorData;
+        mesh.uv = BaseBuilder.colorData;
     }
 
     protected void OnValidate()
@@ -89,11 +89,11 @@ public abstract class TerrainGenerator : TerrainBuilder<Vector2>
     protected void ReshapeMesh()
     {
         SetOffset();
-        CreateShape(out vertices);
-        if (mesh.vertices.Length != vertices.Length)
+        CreateShape(out BaseBuilder.vertices);
+        if (mesh.vertices.Length != Vertices.Length)
         {
-            DrawCurrentVertices();
-            BuildUvs();
+            BaseBuilder.DrawCurrentVertices();
+            BaseBuilder.BuildUvs();
             UpdateMesh();
         }
         UpdateVertices();

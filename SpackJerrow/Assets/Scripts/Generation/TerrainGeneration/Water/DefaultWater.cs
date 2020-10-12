@@ -92,7 +92,7 @@ public class DefaultWater : TerrainGenerator, ITerrainHeightEvaluator, IFloating
 
         int calculatedWaterSize = PersistentGameDataController.Settings.waterCalculationSize;
         
-        ModifyShape(ref vertices, Mathf.RoundToInt(startPosition.x - (calculatedWaterSize / 2)), Mathf.RoundToInt(startPosition.y - (calculatedWaterSize / 2)), calculatedWaterSize);
+        ModifyShape(ref BaseBuilder.vertices, Mathf.RoundToInt(startPosition.x - (calculatedWaterSize / 2)), Mathf.RoundToInt(startPosition.y - (calculatedWaterSize / 2)), calculatedWaterSize);
 
         //ReshapeY(ref vertices);
 
@@ -161,7 +161,7 @@ public class DefaultWater : TerrainGenerator, ITerrainHeightEvaluator, IFloating
                                     int index = GetNearestIndex(progress);
                                     if (index >= 0)
                                     {
-                                        waveHeight = vertices[index].y + transform.position.y;
+                                        waveHeight = Vertices[index].y + transform.position.y;
                                     }
                                     else
                                     {

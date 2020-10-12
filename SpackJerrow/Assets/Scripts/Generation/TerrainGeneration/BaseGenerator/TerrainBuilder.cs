@@ -48,10 +48,10 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
         SetMeshAsCollision(mesh);
     }
 
-    protected override void Initialize()
+    protected virtual void Initialize()
     {
         SetOffset();
-        base.Initialize();
+        BuildMesh();
     }
 
     protected MeshCollider MeshCollider
@@ -250,7 +250,7 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
             result[3] = MoveOnZ(result[1]);
         }
 
-        float zIndex = ((vertices.Length - xVerticesLenght)) * progress.y;
+        float zIndex = ((Vertices.Length - xVerticesLenght)) * progress.y;
         float modDiff = zIndex % xVerticesLenght;
 
 
@@ -326,7 +326,7 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
     {
         IndexInfo result = new IndexInfo();
         int xVerticesLenght = VerticesXCount;
-        float zIndex = (vertices.Length - xVerticesLenght) * progress.y;
+        float zIndex = (Vertices.Length - xVerticesLenght) * progress.y;
 
         float indexMod = zIndex % xVerticesLenght;
 
@@ -360,7 +360,7 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
         {
             if (info != null)
             {
-                height += vertices[info.index].y * Mathf.Max(0, (1 - (info.DistanceToOriginal)));
+                height += Vertices[info.index].y * Mathf.Max(0, (1 - (info.DistanceToOriginal)));
             }
         }
 
@@ -405,7 +405,7 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
                 info = null;
                 int originalXDiff = Mathf.Abs(startInfo.xIndex - x);
                 int originalZDiff = Mathf.Abs(middleZ - z);
-                if (x >= 0 && x < VerticesXCount && z >= 0 && z * VerticesXCount < vertices.Length && useIndex(originalXDiff, originalZDiff))
+                if (x >= 0 && x < VerticesXCount && z >= 0 && z * VerticesXCount < Vertices.Length && useIndex(originalXDiff, originalZDiff))
                 {
                     info = new IndexInfo();
                     info.OriginalXDiff = originalXDiff;
@@ -549,11 +549,11 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
 
     public float AbsoluteHeightOnNearestIndex(Vector2 position)
     {
-        return vertices[GetNearestIndex(ToLocalProgress(position))].y + transform.position.y;
+        return Vertices[GetNearestIndex(ToLocalProgress(position))].y + transform.position.y;
     }
 
     public float RelativeHeightOnNearestIndex(Vector2 position)
     {
-        return vertices[GetNearestIndex(ToLocalProgress(position))].y;
+        return Vertices[GetNearestIndex(ToLocalProgress(position))].y;
     }
 }

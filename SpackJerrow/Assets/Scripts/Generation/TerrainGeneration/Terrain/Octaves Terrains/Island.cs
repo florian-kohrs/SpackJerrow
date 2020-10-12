@@ -59,10 +59,10 @@ public class Island : OctavesColourGenerator
                 IndexInfo i = digIndices[x * digSize * 2 + y];
                 if (i != null) {
                     float distance = Mathf.Sqrt(Mathf.Pow(digSize - x, 2) + Mathf.Pow(digSize - y, 2));
-                    diggedTerrainColor = colorData[i.index];
-                    newHeight = vertices[i.index].y - digPower * (Mathf.Cos((i.DistanceToOriginal / digSize) * Mathf.PI / 2));
-                    vertices[i.index].y = newHeight;
-                    colorData[i.index] = GetColorAt(0, 0, vertices[i.index].y);
+                    diggedTerrainColor = ColorData[i.index];
+                    newHeight = Vertices[i.index].y - digPower * (Mathf.Cos((i.DistanceToOriginal / digSize) * Mathf.PI / 2));
+                    Vertices[i.index].y = newHeight;
+                    ColorData[i.index] = GetColorAt(0, 0, Vertices[i.index].y);
                     modifiedHeights[new Serializable2DVector(i.xIndex, i.zIndex / VerticesXCount)] = newHeight;
                 }
             }
