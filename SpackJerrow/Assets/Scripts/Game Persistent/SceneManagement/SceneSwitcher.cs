@@ -36,7 +36,7 @@ public class SceneSwitcher
     public static void EnterScene(string sceneName, bool saveCurrent = true, 
         bool loadNext = true, params ISaveableGameObject[] transferObjects)
     {
-        getInstance().gameDataController.enterScene(sceneName, 
+        getInstance().gameDataController.EnterScene(sceneName, 
             saveCurrent, loadNext, transferObjects);
     }
 

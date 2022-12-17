@@ -84,9 +84,9 @@ public class PersistentGameDataController
 
         initializeSavePath();
 
-        checkForExistingSettings();
+        CheckForExistingSettings();
 
-        loadSaveSlots();
+        LoadSaveSlots();
 
         initializeEvents();
     }
@@ -113,7 +113,7 @@ public class PersistentGameDataController
 
     private SaveableGame currentGame;
 
-    public SaveableGame getCurrentGame()
+    public SaveableGame GetCurrentGame()
     {
         return currentGame;
     }
@@ -130,7 +130,7 @@ public class PersistentGameDataController
     /// <param name="saveCurrent">should the current scene be saved?</param>
     /// <param name="loadNext">should the next scene be loaded?</param>
     /// <param name="transferObjects">theese objects will be taken to the next scene<</param>
-    public void enterScene(string sceneName, bool saveCurrent = true,
+    public void EnterScene(string sceneName, bool saveCurrent = true,
         bool loadNext = true, params ISaveableGameObject[] transferObjects)
     {
         lock (SyncRoot)
@@ -140,29 +140,29 @@ public class PersistentGameDataController
             List<IRestorableGameObject> transferedHirachy = null;
             if (saveCurrent)
             {
-                transferedHirachy = saveCurrentSceneBeforeEnteringNew(transferObjects.ToList());
+                transferedHirachy = SaveCurrentSceneBeforeEnteringNew(transferObjects.ToList());
             }
 
             ///creates next scene if it doesnt exist
 
             currentGame.prepareNextScene(sceneName, transferedHirachy, loadNext);
 
-            loadScene(sceneName);
+            LoadScene(sceneName);
         }
     }
 
 
-    public void enterScene(string sceneName)
+    public void EnterScene(string sceneName)
     {
-        enterScene(sceneName, true, true);
+        EnterScene(sceneName, true, true);
     }
 
-    private void loadScene(string sceneName)
+    private void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
 
-    private void saveCurrentSceneBeforeEnteringNew()
+    private void SaveCurrentSceneBeforeEnteringNew()
     {
         ///if the scene-change is not for loading purpose, the current scene objects will be
         ///saved before being destroyed 
@@ -170,14 +170,14 @@ public class PersistentGameDataController
         {
             IsLoading = true;
 
-            saveScene();
+            SaveScene();
 
             ///clear ingame object list, since the objects wont exist in the next scene
             currentGame.CurrentScene.clearCurrentSceneObjects();
         }
     }
 
-    private List<IRestorableGameObject> saveCurrentSceneBeforeEnteringNew(List<ISaveableGameObject> ignoreForSave)
+    private List<IRestorableGameObject> SaveCurrentSceneBeforeEnteringNew(List<ISaveableGameObject> ignoreForSave)
     {
         List<IRestorableGameObject> result = null;
 
@@ -208,7 +208,7 @@ public class PersistentGameDataController
     /// <summary>
     /// will load the existing settings or create them, if they didnt exist before.
     /// </summary>
-    private void checkForExistingSettings()
+    private void CheckForExistingSettings()
     {
         string settingsSavepath = FolderSystem.getSettingsPath();
         ///initialize and save if not exisiting
@@ -220,7 +220,7 @@ public class PersistentGameDataController
         else
         {
             ///save, if settings file exists
-            settings = loadSaveable<Settings>(settingsSavepath);
+            settings = LoadSaveable<Settings>(settingsSavepath);
         }
     }
 
@@ -273,10 +273,10 @@ public class PersistentGameDataController
 
     public static SceneSwitcher GetSceneSwitcher()
     {
-        return GetInstance().getSceneSwitcher();
+        return GetInstance().GetSceneSwitcher_();
     }
 
-    private SceneSwitcher getSceneSwitcher()
+    private SceneSwitcher GetSceneSwitcher_()
     {
         return new SceneSwitcher(GetInstance());
     }
@@ -287,27 +287,27 @@ public class PersistentGameDataController
     /// </summary>
     public static void NewGame()
     {
-        GetInstance().newGame();
+        GetInstance().NewGame_();
     }
 
-    private void newGame()
+    private void NewGame_()
     {
-        newGame(DefaultSceneName);
+        NewGame_(DefaultSceneName);
     }
     public static void NewGame(string startScene)
     {
-        GetInstance().newGame(startScene);
+        GetInstance().NewGame_(startScene);
     }
 
     /// <summary>
     /// starts a new game and opens a scene with the same name than the given name
     /// </summary>
     /// <param name="startScene"></param>
-    private void newGame(string startScene)
+    private void NewGame_(string startScene)
     {
         IsLoading = true;
         instance.currentGame = new SaveableGame(this);
-        enterScene(startScene, false, true);
+        EnterScene(startScene, false, true);
     }
 
     /// <summary>
@@ -316,7 +316,7 @@ public class PersistentGameDataController
     /// </summary>
     public static void EnterRunningGame()
     {
-        instance.EnterRunningGame_();
+        GetInstance().EnterRunningGame_();
     }
 
     private void EnterRunningGame_()
@@ -334,7 +334,7 @@ public class PersistentGameDataController
     /// <summary>
     /// saves the scene temporarily -> isnt saved to file
     /// </summary>
-    private void saveScene()
+    private void SaveScene()
     {
         currentGame.saveCurrentScene(PersistentGameDataController.SaveType.Scene);
     }
@@ -349,13 +349,13 @@ public class PersistentGameDataController
 
     public static bool SaveGame(string saveName)
     {
-        return GetInstance().saveGame(saveName);
+        return GetInstance().SaveGame_(saveName);
     }
 
-    private bool saveGame(string saveName)
+    private bool SaveGame_(string saveName)
     {
         string s;
-        return saveGame(saveName, out s);
+        return SaveGame_(saveName, out s);
     }
 
     /// <summary>
@@ -368,10 +368,10 @@ public class PersistentGameDataController
     /// <returns>return true when no exception was thrown</returns>
     public static bool SaveGame(string saveName, out string resultMessage)
     {
-        return GetInstance().saveGame(saveName, out resultMessage);
+        return GetInstance().SaveGame_(saveName, out resultMessage);
     }
 
-    private bool saveGame(string saveName, out string resultMessage)
+    private bool SaveGame_(string saveName, out string resultMessage)
     {
         timer.start("Save Game");
         bool result = true;
@@ -414,7 +414,7 @@ public class PersistentGameDataController
         }
 
         ///store game and loaded scenes in file
-        saveGameAndScenesToFile(saveName);
+        SaveGameAndScenesToFile(saveName);
 
         ///if a new save slot is created, all not loaded scenes must be copied
         ///in the new director, so all data is transfered
@@ -423,7 +423,7 @@ public class PersistentGameDataController
             ///only copy if the current game exists in the savedGameList
             if (currentGameIndex >= 0)
             {
-                copyAllNotLoadedScenesToDirectory
+                CopyAllNotLoadedScenesToDirectory
                     (FolderSystem.getDefaulScenePath(saveName));
             }
             allSavedGames.Add(currentGame);
@@ -434,7 +434,7 @@ public class PersistentGameDataController
         if (currentGameIndex >= 0)
         {
             ///load old game and set it in the savedgame list
-            allSavedGames[currentGameIndex] = loadSaveable<SaveableGame>
+            allSavedGames[currentGameIndex] = LoadSaveable<SaveableGame>
                 (FolderSystem.getGameSavePath(oldGameName));
         }
 
@@ -459,7 +459,7 @@ public class PersistentGameDataController
     /// copies all not loaded scenes to new directory
     /// </summary>
     /// <param name="copyTo"></param>
-    private void copyAllNotLoadedScenesToDirectory(string copyTo)
+    private void CopyAllNotLoadedScenesToDirectory(string copyTo)
     {
         foreach (string s in currentGame.getAllNotLoadedScenePaths())
         {
@@ -468,7 +468,7 @@ public class PersistentGameDataController
         }
     }
 
-    private void saveGameAndScenesToFile(string saveName)
+    private void SaveGameAndScenesToFile(string saveName)
     {
         FolderSystem.createNewSaveSlotDirectory(saveName);
 
@@ -490,11 +490,11 @@ public class PersistentGameDataController
     /// <summary>
     /// loads all saved games slots, to show the load choices
     /// </summary>
-    public void loadSaveSlots()
+    public void LoadSaveSlots()
     {
         foreach (string s in FolderSystem.getAllSaveSlotNames())
         {
-            SaveableGame game = loadSaveable<SaveableGame>
+            SaveableGame game = LoadSaveable<SaveableGame>
                 (FolderSystem.getGameSavePath(Path.GetFileName(s)));
             allSavedGames.Add(game);
         }
@@ -512,12 +512,12 @@ public class PersistentGameDataController
     /// <param name="index"></param>
     public static void LoadGame(string name)
     {
-        GetInstance().loadGame(name);
+        GetInstance().LoadGame_(name);
     }
 
-    private void loadGame(string name)
+    private void LoadGame_(string name)
     {
-        loadGame(allSavedGames.IndexOf
+        LoadGame_(allSavedGames.IndexOf
             (allSavedGames.Where(game => game.GameName == name).First()));
     }
 
@@ -537,7 +537,7 @@ public class PersistentGameDataController
     /// <param name="index"></param>
     public static void LoadGame(int index)
     {
-        GetInstance().loadGame(index);
+        GetInstance().LoadGame_(index);
     }
 
     /// <summary>
@@ -546,16 +546,16 @@ public class PersistentGameDataController
     /// <param name="menueSceneName"></param>
     public static void ExitGame(string menueSceneName)
     {
-        GetInstance().exitGame(menueSceneName);
+        GetInstance().ExitGame_(menueSceneName);
     }
 
-    private void exitGame(string menueSceneName)
+    private void ExitGame_(string menueSceneName)
     {
         currentGame = null;
-        loadScene(menueSceneName);
+        LoadScene(menueSceneName);
     }
 
-    public void loadGame(int index)
+    public void LoadGame_(int index)
     {
         timer.start("started loading");
         lock (SyncRoot)
@@ -567,7 +567,7 @@ public class PersistentGameDataController
             internIsLoading = true;
 
             ///reload game out of file (in case a reference changed something)
-            allSavedGames[index] = loadSaveable<SaveableGame>
+            allSavedGames[index] = LoadSaveable<SaveableGame>
                 (FolderSystem.getGameSavePath(allSavedGames[index].GameName));
 
             timer.addCheckPoint("read data out of file");
@@ -580,7 +580,7 @@ public class PersistentGameDataController
         }
     }
 
-    private void clear()
+    private void Clear()
     {
         throw new System.NotImplementedException();
     }
@@ -600,7 +600,7 @@ public class PersistentGameDataController
     /// <typeparam name="T">The Type to load</typeparam>
     /// <param name="path">path to load the object from</param>
     /// <returns></returns>
-    public T loadSaveable<T>(string path)
+    public T LoadSaveable<T>(string path)
     {
         T result = default(T);
         //Debug.Log("loadthis." + path);

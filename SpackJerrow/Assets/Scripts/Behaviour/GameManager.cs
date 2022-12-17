@@ -110,6 +110,7 @@ public class GameManager
         return Player?.GetComponent<T>();
     }
 
+
     public static void FreezeCamera()
     {
         GM.isCameraBlocked = true;

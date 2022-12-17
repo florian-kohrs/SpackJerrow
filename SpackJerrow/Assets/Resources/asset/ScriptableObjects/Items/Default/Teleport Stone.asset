@@ -23,8 +23,8 @@ MonoBehaviour:
     type: 3}
   icon: {fileID: 21300000, guid: adb5887d87a54284899cd5f0500423a3, type: 3}
   itemName: Teleport Stone
-  itemDescription: Some think its just a stone, some say its food and others say nothing
-    at all
+  itemDescription: Some think its just a stone, some say its food and others say
+    nothing at all
   value: 152
   canBeSoled: 0
   itemType: 1

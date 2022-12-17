@@ -50,7 +50,7 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
 
     protected override void Initialize()
     {
-        SetOffset();
+        UpdateOffset();
         base.Initialize();
     }
 
@@ -81,7 +81,7 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
         SetMeshAsCollision(mesh);
     }
 
-    protected void SetOffset()
+    public void UpdateOffset()
     {
         offset = GetCenteredMesh();
     }
@@ -561,7 +561,10 @@ public abstract class TerrainBuilder<T> : MeshBuilder<T>, IHeightInfo
 
     public float AbsoluteHeightOnNearestIndex(Vector2 position)
     {
-        return vertices[GetNearestIndex(GlobalPosToProgress(position))].y + transform.position.y;
+        int nearestIndex = GetNearestIndex(GlobalPosToProgress(position));
+        if(nearestIndex < 0 || nearestIndex >= vertices.Length)
+            nearestIndex = GetNearestIndex(GlobalPosToProgress(position));
+        return vertices[nearestIndex].y + transform.position.y;
     }
 
     public float RelativeHeightOnNearestIndex(Vector2 position)

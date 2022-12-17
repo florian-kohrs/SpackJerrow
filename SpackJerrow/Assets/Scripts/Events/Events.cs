@@ -24,13 +24,25 @@ public class Events
 
     private const string FINDABLE_OBJECTS_TAG = "Findables";
 
-    private const string MAP_ONE_MAINISLAND_NAME = "MainIsland";
-    
+    #region const strings/namings
+
     #region findables names
+
+    private const string MAP_ONE_MAINISLAND_NAME = "MainIsland";
 
     #region stegs
 
     private const string MAP_ONE_MAINISLAND_LANDINGSTAGE = "WaitPositionMainLandingStage";
+
+    #endregion
+
+    #endregion
+
+    #region important tag names
+
+    public const string MAP_ONE_SIMPLE_PORTAL_TAG_NAME = "Portal";
+
+    public const string MAP_ONE_PERMUDA_PORTAL_TAG_NAME = "PermudaTri";
 
     #endregion
 
@@ -82,36 +94,34 @@ public class Events
 
     private static void LookAt(GameObject gameObject)
     {
-        //LookAt(gameObject.GetComponent<CameraDirector>());
+        LookAt(gameObject.GetComponent<CameraDirector>());
     }
 
-    //private static void LookAt(CameraDirector director)
-    //{
-    //    director.AnimateCamera(GameManager.PlayerMainCamera.transform);
-    //}
-
-    public static void LookAtMainIsland()
+    private static void LookAtFindable(string name)
     {
-        
-        Vector3 observationPosition = new Vector3(-134.2f, 45.1f, 78.3f);
-        Vector3 observationEuler = new Vector3(30.4f, -18.32f, 0);
+        LookAt(FindGameObjectWithName(name));
+    }
 
+    private static void LookAtTaged(string tag)
+    {
+        LookAt(FindGameObjectWithTag(tag));
+    }
+
+    private static void LookAt(CameraDirector director)
+    {
         Transform cam = Camera.main.transform;
         Vector3 euler = cam.localEulerAngles;
         Vector3 pos = cam.localPosition;
-        MonoBehaviour source = GameManager.GetPlayerComponent<MonoBehaviour>();
-        source.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(cam.eulerAngles, observationEuler, 2.5f, v => cam.eulerAngles = v));
-        source.StartCoroutine(
-        SmoothTransformation<Vector3>.SmoothRotateEuler(cam.position, observationPosition, 2.5f, v => cam.position = v, () =>
-          {
-              source.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(observationPosition, observationPosition, 1.5f, v => { }, () =>
-              {
-                  cam.localEulerAngles = euler;
-                  cam.localPosition = pos;
-              }));
-          })
-          );
+        director.AnimateCamera(GameManager.PlayerMainCamera.transform, true, ()=>
+        {
+            cam.localEulerAngles = euler;
+            cam.localPosition = pos;
+        });
+    }
 
+    public static void LookAtMainIsland()
+    {
+        LookAtFindable(MAP_ONE_MAINISLAND_NAME);
     }
 
     public static void GetDrunk()
@@ -120,7 +130,7 @@ public class Events
     }
 
     #region Steersman events
-    
+
     public static void SteersmanToLandingStage()
     {
         MoveTowards move = FindGameObjectWithTag("Steersman").GetComponent<MoveTowards>();
@@ -165,54 +175,18 @@ public class Events
 
     public static void LookAtPortal()
     {
-        Vector3 observationPosition = new Vector3(-253.2f, 35.7f, 119.1f);
-        Vector3 observationEuler = new Vector3(22.306f, -90f, 0);
-
-
-
-        Transform cam = Camera.main.transform;
-        Vector3 pos = cam.localPosition;
-        Vector3 euler = cam.localEulerAngles;
-        MonoBehaviour source = GameManager.GetPlayerComponent<MonoBehaviour>();
-        source.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(cam.eulerAngles, observationEuler, 2.5f, v => cam.eulerAngles = v));
-        source.StartCoroutine(
-            SmoothTransformation<Vector3>.SmoothRotateEuler(cam.position, observationPosition, 2.5f, v => cam.position = v, () =>
-            {
-                source.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(observationPosition, observationPosition, 1.5f, v => { }, () =>
-                {
-                    cam.localEulerAngles = euler;
-                    cam.localPosition = pos;
-                }));
-            })
-        );
+        LookAtTaged(MAP_ONE_SIMPLE_PORTAL_TAG_NAME);
     }
 
     public static void OpenPermuda()
     {
-        GameObject f = FindGameObjectWithTag("PermudaTri");
+        GameObject f = FindGameObjectWithTag(MAP_ONE_PERMUDA_PORTAL_TAG_NAME);
         f.GetComponentInChildren<StartFog>().EnableFog();
     }
 
-    private static void LookAtTriangle()
+    public static void LookAtTriangle()
     {
-        Vector3 observationPosition = new Vector3(-182.81f, 65.13f, 41.95f);
-        Vector3 observationEuler = new Vector3(27.237f, -149.538f, 0);
-
-        Transform cam = Camera.main.transform;
-        Vector3 euler = cam.localEulerAngles;
-        Vector3 pos = cam.localPosition;
-        MonoBehaviour source = GameManager.GetPlayerComponent<MonoBehaviour>();
-        source.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(cam.eulerAngles, observationEuler, 2.5f, v => cam.eulerAngles = v));
-        source.StartCoroutine(
-            SmoothTransformation<Vector3>.SmoothRotateEuler(cam.position, observationPosition, 2.5f, v => cam.position = v, () =>
-            {
-                source.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(observationPosition, observationPosition, 2f, v => { }, () =>
-                {
-                    cam.localEulerAngles = euler;
-                    cam.localPosition = pos;
-                }));
-            })
-        );
+        LookAtTaged(MAP_ONE_PERMUDA_PORTAL_TAG_NAME);
     }
 
     public static void MakeCrewDrunk()
@@ -266,8 +240,8 @@ public class Events
         MonoBehaviour m = player.GetComponent<MonoBehaviour>();
         m.DoDelayed(0.25f, delegate
         {
-            Vector3 observationPosition = new Vector3(23.68f, 27.49f, -27.52f);
-            Vector3 observationEuler = new Vector3(90.00001f, 0, 38.817f);
+            Vector3 observationPosition = new Vector3(334.8f, 65.49f, -205f);
+            Vector3 observationEuler = new Vector3(90.00001f, 0, 0f);
 
             m.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(cam.eulerAngles, observationEuler, 4f, v => cam.eulerAngles = v));
             m.StartCoroutine(
@@ -277,9 +251,9 @@ public class Events
                     {
                         admiral.GetComponent<IntroAdmiral>().JumpInWater();
                     });
-                    Vector3 observationPosition2 = new Vector3(95, 255.7f, -116.1f);
-                    Vector3 observationEuler2 = new Vector3(51.937f, -38.817f, 0);
-                    m.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(cam.eulerAngles, observationEuler2, 16f, v => cam.eulerAngles = v));
+                    Vector3 observationPosition2 = new Vector3(340.32f, 149.3f, -208.62f);
+                    Vector3 observationEuler2 = new Vector3(27.514f, -50.534f, 0);
+                    m.StartCoroutine(SmoothTransformation<Vector3>.SmoothRotateAngleEuler(cam.eulerAngles, observationEuler2, 8f, v => cam.eulerAngles = v));
                     m.StartCoroutine(
                         SmoothTransformation<Vector3>.SmoothRotateEuler(cam.position, observationPosition2, 17.8f, v => cam.position = v, delegate
                         {

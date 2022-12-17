@@ -72,9 +72,10 @@ public class IslandPlacer : SaveableMonoBehaviour
         treasureIsland.terrainWidth = xSize;
         treasureIsland.terrainLength = zSize;
         treasureIsland.treasureCount = Rand.Variance(treasuresOnIsland, treasureVariance);
+        treasureIsland.UpdateOffset();
         newIsland.parent = parent;
         newIsland.position = new Vector3(xDiff, -0.5f, zDiff);
-
+        
         placedIslands.Add(islandPlace);
     }
     

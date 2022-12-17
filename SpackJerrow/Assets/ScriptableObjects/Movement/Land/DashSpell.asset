@@ -15,7 +15,7 @@ MonoBehaviour:
   direction: 14
   forceMode: 1
   cost: 2
-  cooldown: 3
+  cooldown: 0
   power: 15
   input: 0
   buttonTriggerName: Dash

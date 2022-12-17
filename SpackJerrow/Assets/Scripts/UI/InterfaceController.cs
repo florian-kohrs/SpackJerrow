@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class InterfaceController : InterfaceMask
 {
-
+    
     private List<IInterfaceMask> activeMasks = 
         new List<IInterfaceMask>();
     

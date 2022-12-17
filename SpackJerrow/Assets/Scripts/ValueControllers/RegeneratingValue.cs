@@ -25,7 +25,7 @@ public class RegeneratingValue : SaveableMonoBehaviour
         {
             if (value != currentValue)
             {
-                float delta = value - currentValue;
+                 float delta = value - currentValue;
                 currentValue = value;
                 OnValueChanged(delta);
             }

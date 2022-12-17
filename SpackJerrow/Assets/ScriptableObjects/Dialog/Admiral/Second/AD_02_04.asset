@@ -29,4 +29,6 @@ MonoBehaviour:
       wasAlreadyValidated: 0
       runtimeRef: {fileID: 11400000, guid: 0eb1301aea6b6e14dbc48fe6009f7c04, type: 2}
     itemCount: 1
-  triggerMemberName: EndGame
+  addedItems: []
+  triggerMemberNames:
+  - EndGame

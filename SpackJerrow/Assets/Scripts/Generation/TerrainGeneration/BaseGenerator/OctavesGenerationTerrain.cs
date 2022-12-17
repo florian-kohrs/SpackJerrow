@@ -128,7 +128,7 @@ public abstract class OctavesGenerationTerrain<T> : TerrainBuilder<T>
                     frequency *= lacunarity;
                 }
 
-                noiseHeight *= GetHeightMultiplierForProgress((float)x / VerticesXCount, (float)z / VerticesZCount);
+                noiseHeight *= GetHeightMultiplierForProgress((float)x / XSize, (float)z / ZSize);
 
                 if (noiseHeight > normalizedMaxNoiseHeight)
                 {

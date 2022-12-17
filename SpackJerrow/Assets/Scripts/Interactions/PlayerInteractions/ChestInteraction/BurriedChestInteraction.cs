@@ -14,6 +14,9 @@ public class BurriedChestInteraction : LootChestInteraction
     [Save]
     public IHeightInfo surface;
 
+    [Save]
+    public ChestInfo chestInfo;
+
     [Save]   
     private bool canBeOpened = false;
 

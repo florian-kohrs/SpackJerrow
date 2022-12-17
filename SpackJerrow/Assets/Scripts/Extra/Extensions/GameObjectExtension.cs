@@ -20,6 +20,30 @@ public static class GameObjectExtension
         return null;
     }
 
+    public static List<T> GetInterfaces<T>(this GameObject g) where T : class
+    {
+        List<T> result = new List<T>();
+        MonoBehaviour[] ms = g.GetComponents<MonoBehaviour>();
+        foreach (MonoBehaviour m in ms)
+        {
+            if (m is T)
+            {
+                result.Add(m as T);
+            }
+        }
+        return result;
+    }
+
+    public static T GetInterface<T>(this MonoBehaviour mono) where T : class
+    {
+        return mono.gameObject.GetInterface<T>();
+    }
+
+    public static List<T> GetInterfaces<T>(this MonoBehaviour mono) where T : class
+    {
+        return mono.gameObject.GetInterfaces<T>();
+    }
+
     public static T GetOrAddComponent<T>(this Component c, Action<T> setupOnCreate = null) where T : Component
     {
         return c.gameObject.GetOrAddComponent<T>(setupOnCreate);

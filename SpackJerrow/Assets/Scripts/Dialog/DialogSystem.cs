@@ -29,14 +29,14 @@ public class DialogSystem : InterfaceMask
     
     public InterfaceController interfaceController;
 
+    public DialogButton nodeConnectorBtn;
+
     public Text choiceOne;
     public Text choiceTwo;
-    public Text connectorText;
     public Text displayedPlayerText;
     public Text displayedNpcText;
     public Button leftChoiceBtn;
     public Button rightChoiceBtn;
-    public Button connectBtn;
     
     //private IEnumerator currentTextAnimation;
 
@@ -107,6 +107,8 @@ public class DialogSystem : InterfaceMask
 
     private void CallNodeEvent(DialogNode node)
     {
+        if (node.triggerMemberNames == null)
+            return;
         foreach(string s in node.triggerMemberNames)
         {
             if (!string.IsNullOrEmpty(s))
@@ -153,7 +155,7 @@ public class DialogSystem : InterfaceMask
     {
         leftChoiceBtn.gameObject.SetActive(false);
         rightChoiceBtn.gameObject.SetActive(false);
-        connectBtn.gameObject.SetActive(false);
+        nodeConnectorBtn.btn.gameObject.SetActive(false);
     }
     
     private void ShowDialogChoices()
@@ -211,8 +213,8 @@ public class DialogSystem : InterfaceMask
     
     private void ShowConnector(string message)
     {
-        connectorText.text = message;
-        connectBtn.gameObject.SetActive(true);
+        nodeConnectorBtn.btnText.text = message;
+        nodeConnectorBtn.btn.gameObject.SetActive(true);
     }
 
     protected override void Open_()

@@ -11,7 +11,7 @@ public static class VectorExtension
         return result;
     }
 
-    public static Vector2 RotateVector(this Vector2 original, float rad, Vector2 offset = default(Vector2))
+    public static Vector2 RotateVector(this Vector2 original, float rad, Vector2 offset = default)
     {
         Vector2 result = Vector2.zero;
         float cos = Mathf.Cos(rad * Mathf.PI);

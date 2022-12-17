@@ -8,11 +8,7 @@ public class SCannonShooter : SaveableUnityComponent<CannonShooter>
     protected override void restoreComponent(CannonShooter component)
     {
         component.boat = b;
-        component.cannon = b?.transform
-            .GetChild(2)
-            .GetChild(1)
-            .GetChild(0)
-            .GetComponent<CannonBallDispenser>();
+        component.cannon = b.GetComponentInChildren<CannonBallDispenser>();
     }
 
     private Boat b;

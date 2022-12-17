@@ -21,6 +21,8 @@ public abstract class MeshBuilder<T> : SaveableMonoBehaviour, IMeshInfo
         }
     }
 
+    public bool shadeFlat;
+
     private MeshFilter filter;
     
     #region abstract members
@@ -87,6 +89,10 @@ public abstract class MeshBuilder<T> : SaveableMonoBehaviour, IMeshInfo
         CreateShape(out vertices);
         DrawCurrentVertices();
         BuildUvs();
+
+        if(shadeFlat)
+            ShadeFlat();
+
         UpdateMesh();
         MeshFilter.mesh = mesh;
     }
@@ -147,7 +153,7 @@ public abstract class MeshBuilder<T> : SaveableMonoBehaviour, IMeshInfo
     protected void DisplayVertexChanges()
     {
         UpdateVertices();
-        mesh.RecalculateNormals();
+        //mesh.RecalculateNormals();
     }
 
     protected void CreateShape(out Vector3[] shape)
@@ -179,6 +185,7 @@ public abstract class MeshBuilder<T> : SaveableMonoBehaviour, IMeshInfo
     
     protected void DrawCurrentVertices()
     {
+
         trianglePoints = new int[TriangleCount * POINTS_PER_TRIANGLE];
 
         int currentPointIndex = 0;
@@ -222,6 +229,25 @@ public abstract class MeshBuilder<T> : SaveableMonoBehaviour, IMeshInfo
                 index++;
             }
         }
+    }
+
+    private void ShadeFlat()
+    {
+        ShadeFlat(ref vertices, trianglePoints, ref colorData);
+    }
+
+    public static void ShadeFlat<K>(ref Vector3[] vertices, int[] triangles, ref K[] colorData)
+    {
+        Vector3[] flatshededVertices = new Vector3[triangles.Length];
+        K[] flatshededUVs = new K[triangles.Length];
+        for (int i = 0; i < triangles.Length; i++)
+        {
+            flatshededVertices[i] = vertices[triangles[i]];
+            flatshededUVs[i] = colorData[triangles[i]];
+            triangles[i] = i;
+        }
+        colorData = flatshededUVs;
+        vertices = flatshededVertices;
     }
 
     //private void OnDrawGizmos()

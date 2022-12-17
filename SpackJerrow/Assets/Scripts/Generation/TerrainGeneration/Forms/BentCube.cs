@@ -34,33 +34,35 @@ public class BentCube : ShapeGenerator
 
         if (z == 0)
         {
-            return GetCurrentY((x + 1) % 5, z + 1);
+            result = GetCurrentY((x + 1) % 5, z + 1);
         }
         else if(z == ZSize)
         {
-            return GetCurrentY((x + 1) % 5, z - 1);
+            result = GetCurrentY((x + 1) % 5, z - 1);
         }
-
-        switch (x)
+        else
         {
-            case 0:
-            case 1:
-            case 4:
-                {
-                    result += Height / 2;
-                    break;
-                }
-            case 2:
-            case 3:
-                {
-                    result -= Height / 2;
-                    break;
-                }
-            default:
-                {
-                    throw new System.ArgumentException("X can`t be higher than 4 yet it is: " + x);
-                }
 
+            switch (x)
+            {
+                case 0:
+                case 1:
+                case 4:
+                    {
+                        result += Height / 2;
+                        break;
+                    }
+                case 2:
+                case 3:
+                    {
+                        result -= Height / 2;
+                        break;
+                    }
+                default:
+                    {
+                        throw new System.ArgumentException("X can`t be higher than 4 yet it is: " + x);
+                    }
+            }
         }
         return result;
     }

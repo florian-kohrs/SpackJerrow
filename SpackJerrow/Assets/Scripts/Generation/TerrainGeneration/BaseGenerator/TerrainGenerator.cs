@@ -88,7 +88,7 @@ public abstract class TerrainGenerator : TerrainBuilder<Vector2>
 
     protected void ReshapeMesh()
     {
-        SetOffset();
+        UpdateOffset();
         CreateShape(out vertices);
         if (mesh.vertices.Length != vertices.Length)
         {

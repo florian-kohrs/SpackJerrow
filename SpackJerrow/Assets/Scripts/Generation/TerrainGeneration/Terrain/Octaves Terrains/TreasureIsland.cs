@@ -23,7 +23,7 @@ public class TreasureIsland : Island
 
     public int treasureCount;
 
-    private const float MIN_DISTANCE_TO_BORDER = 5;
+    private const float MIN_DISTANCE_TO_BORDER = 15;
 
     public Color treasureColor;
 
@@ -79,15 +79,12 @@ public class TreasureIsland : Island
         {
             o.GetComponent<BurriedChestInteraction>().surface = this;
         }
-        foreach (GameObject o in treasures)
-        {
-            o.GetComponent<BurriedChestInteraction>().surface = this;
-        }
     }
 
     private void SetTreasure()
     {
         Vector2 islandCenter = new Vector2(offset.x, offset.z);
+        Vector2 allowedChestArea = new Vector2(XSize - MIN_DISTANCE_TO_BORDER, ZSize - MIN_DISTANCE_TO_BORDER); 
         Vector2 treasureMaxDistance = islandCenter - new Vector2(MIN_DISTANCE_TO_BORDER, MIN_DISTANCE_TO_BORDER);
 
         for (int i = 0; i < treasureCount; i++)
@@ -96,22 +93,20 @@ public class TreasureIsland : Island
             bool randomPosition = ChestAt(i, out chestInfo.chest);
             chestInfo.moveChest = randomPosition;
             chestInfo.markChest = chestInfo.chest == null || chestInfo.chest.isMarked;
-            Vector2 treasurePosition = Vector2.zero;
-            Vector2 locationProgress = Random.insideUnitCircle;
+            Vector2 treasurePosition;
+            Vector2 locationProgress;
             if (randomPosition)
             {
-                treasurePosition = locationProgress * treasureMaxDistance;
-
-                treasurePosition = new Vector2(Mathf.Round(treasurePosition.x), Mathf.Round(treasurePosition.y));
-                locationProgress = LocalPosToProgress(treasurePosition + islandCenter);
+                treasurePosition = new Vector2(Random.Range(MIN_DISTANCE_TO_BORDER, allowedChestArea.x), Random.Range(MIN_DISTANCE_TO_BORDER, allowedChestArea.y));
+                locationProgress = LocalPosToProgress(treasurePosition);
             }
             else
             {
                 treasurePosition = TransformToLocal2DPosition(chestInfo.chest.transform.position);
-                locationProgress = LocalPosToProgress(treasurePosition + islandCenter);
+                locationProgress = LocalPosToProgress(treasurePosition);
             }
             
-            chestInfo.localPosition = treasurePosition;
+            chestInfo.localPosition = treasurePosition - new Vector2(offset.x,offset.z);
             chestInfo.locationProgress = locationProgress;
             //treasureProgressLocations.Add();
             //treasurePositions.Add(treasurePosition);

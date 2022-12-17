@@ -172,7 +172,7 @@ public class SaveableGame
     {
         SaveableGame.GameDataController = gameDataController;
 
-        SaveableScene loadedScene = GameDataController.loadSaveable<SaveableScene>
+        SaveableScene loadedScene = GameDataController.LoadSaveable<SaveableScene>
                 (FolderSystem.getSceneSavePath(GameName,
                 CurrentSceneName));
 
@@ -227,7 +227,7 @@ public class SaveableGame
             if (sceneExists(sceneName))
             {
                 ///if the scene exists in a file load it
-                result = GameDataController.loadSaveable<SaveableScene>(FolderSystem.getSceneSavePath(GameName, sceneName));
+                result = GameDataController.LoadSaveable<SaveableScene>(FolderSystem.getSceneSavePath(GameName, sceneName));
                 /////create new Scene list. Since its marked as "NonSerialized" its null after loading
                 //AllScenes = new List<SaveableScene>();
                 addScene(result);
@@ -389,7 +389,7 @@ public class SaveableGame
             PersistentGameDataController.EnterRunningGame();
         }
 
-        return GameDataController.getCurrentGame();
+        return GameDataController.GetCurrentGame();
     }
 
 }
