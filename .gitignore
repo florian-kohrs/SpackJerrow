@@ -34,3 +34,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+SpackJerrow/UserSettings/EditorUserSettings.asset
+SpackJerrow/.vsconfig
